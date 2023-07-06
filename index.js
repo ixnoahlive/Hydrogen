@@ -3,9 +3,9 @@
 /*  ################ */
 
 // Meta
+import './src/features/firstInstall'
 import './src/commands/settings';
 import './src/commands/reload';
-import './src/features/firstInstall'
 import './src/.dev/metadata';
 
 // Features
@@ -31,7 +31,6 @@ import './src/commands/general/symbols'
 import './src/commands/housing/overrides';
 import './src/commands/housing/panel';
 import './src/commands/housing/item'
-
 
 import Metadata from './src/.dev/metadata';
 

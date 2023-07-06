@@ -24,6 +24,7 @@ if (!FileLib.exists(Metadata.name, '.ixm')) {
         ChatLib.chat('&r&9&m-----------------------------------------------------&r')
         ChatLib.chat(new Message(
             new TextComponent('&9&n[Discord]').setClick('open_url','https://discord.gg/9JMpaJAUfj').setHover('show_text','&9The official development Discord!'),
+            new TextComponent('&7 '),
             new TextComponent('&b[Open Menu]\n').setClick('run_command','/hy').setHover('show_text','&bRuns /hy to open the menu')
         ))
         ChatLib.command('hy-reload quiet', true)
@@ -47,7 +48,8 @@ if (!FileLib.exists(Metadata.name, '.ixm')) {
         ChatLib.chat('&r&9&m-----------------------------------------------------&r')
         ChatLib.chat(new Message(
         new TextComponent('&9&n[Discord]').setClick('open_url','https://discord.gg/9JMpaJAUfj').setHover('show_text','&9The official development Discord!'),
-        new TextComponent('&b [Open Menu]\n').setClick('run_command','/hy').setHover('show_text','&bRuns /hy to open the menu')
+        new TextComponent('&7 '),
+        new TextComponent('&b[Open Menu]\n').setClick('run_command','/hy').setHover('show_text','&bRuns /hy to open the menu')
     ))
 
     if (!Settings.featuresPlaceholderLock) ChatLib.command('restoreplaceholders quiet', true)
