@@ -1,0 +1,55 @@
+
+[general]
+
+	[general.real_shit]
+		hydrogen_extra = true
+
+[automation]
+
+	[automation.recieved_cookie]
+		auto_cookie_response = false
+		auto_cookie_response_message = "thank you for the cookies! <3"
+
+	[automation.guilds]
+		auto_guild_welcome_message = "welcome, $player!"
+		auto_guild = false
+		auto_guild_welcome = false
+
+	[automation.lobby_fishing]
+		auto_fish_gg = false
+		auto_fish_gg_message = "nice catch!"
+
+[housing]
+
+	[housing.menu_wheel]
+		creative_check = true
+
+	[housing.pro_tools]
+		cooldown_notifier = true
+
+	[housing.placeholders]
+		placeholders = true
+		lock_placeholders = false
+
+	[housing.interface]
+		better_ui = true
+
+[hide_spam]
+
+	[hide_spam.lobby]
+		hide_join_messages = false
+		hide_mystery_boxes = false
+		hide_fish = false
+
+	[hide_spam.skyblock]
+		"hide_/ah" = false
+
+	[hide_spam.advertising]
+		"hide_/p_join" = false
+		"hide_/visit" = false
+		"hide_/g_join" = false
+
+	[hide_spam.player_housing]
+		hide_join_messages = false
+		hide_biome_stick = false
+

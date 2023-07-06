@@ -1,0 +1,53 @@
+{
+    "island":{
+        "item":"nbt:{id:\"minecraft:skull\",Count:1b,tag:{SkullOwner:{Id:\"4a045f4f-9ac3-428b-8407-7a9f05b60b38\",hypixelPopulated:1b,Properties:{textures:[0:{Value:\"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzljODg4MWU0MjkxNWE5ZDI5YmI2MWExNmZiMjZkMDU5OTEzMjA0ZDI2NWRmNWI0MzliM2Q3OTJhY2Q1NiJ9fX0=\"}]},Name:\"§4a045f4f-9ac3-428b-8407-7a9f05b60b38\"},display:{Lore:[0:\"§8/warp home\",1:\"\",2:\"§7Your very own chunk of SkyBlock.\",3:\"§7Nice housing for your minions.\",4:\"\",5:\"§eClick to warp!\"],Name:\"§bPrivate Island\"}},Damage:3s}",
+        "position":1,
+        "lore":["§bPrivate Island","","§7Your very own chunk of SkyBlock.","§7Nice housing for your minions.","","§eClick to warp!"],
+        "js":"ChatLib.command('warp home')",
+        "color":"blue"
+    },
+    "hub":{
+        "item":"nbt:{id:\"minecraft:skull\",Count:1b,tag:{SkullOwner:{Id:\"9c6504bf-4b4a-4f18-963e-5267a6027961\",hypixelPopulated:1b,Properties:{textures:[0:{Value:\"eyJ0aW1lc3RhbXAiOjE1NTkyMTU0MTY5MDksInByb2ZpbGVJZCI6IjQxZDNhYmMyZDc0OTQwMGM5MDkwZDU0MzRkMDM4MzFiIiwicHJvZmlsZU5hbWUiOiJNZWdha2xvb24iLCJzaWduYXR1cmVSZXF1aXJlZCI6dHJ1ZSwidGV4dHVyZXMiOnsiU0tJTiI6eyJ1cmwiOiJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Q3Y2M2Njg3NDIzZDA1NzBkNTU2YWM1M2UwNjc2Y2I1NjNiYmRkOTcxN2NkODI2OWJkZWJlZDZmNmQ0ZTdiZjgifX19\"}]},Name:\"§9c6504bf-4b4a-4f18-963e-5267a6027961\"},display:{Lore:[0:\"§8/warp hub\",1:\"\",2:\"§7Where everything happens and\",3:\"§7anything is possible.\",4:\"\",5:\"§8Right-Click to warp!\",6:\"§eLeft-Click to open!\"],Name:\"§bSkyBlock Hub\"}},Damage:3s}",
+        "position":2,
+        "lore":["§bSkyBlock Hub","","§7Where everything happens and","§7anything is possible.","","§eClick to warp!"],
+        "js":"ChatLib.command('warp hub')",
+        "color":"blue"
+    },
+    "garden":{
+        "item":"nbt:{id:\"minecraft:skull\",Count:1b,tag:{SkullOwner:{Id:\"f00c1917-226f-4789-8d02-80fca713ba9b\",hypixelPopulated:1b,Properties:{textures:[0:{Value:\"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjQ4ODBkMmMxZTdiODZlODc1MjJlMjA4ODI2NTZmNDViYWZkNDJmOTQ5MzJiMmM1ZTBkNmVjYWE0OTBjYjRjIn19fQ==\"}]},Name:\"§f00c1917-226f-4789-8d02-80fca713ba9b\"},display:{Lore:[0:\"§8/warp garden\",1:\"\",2:\"§7Spawn on your very own §aGarden§7.\",3:\"\",4:\"§eClick to warp!\"],Name:\"§aThe Garden\"}},Damage:3s}",
+        "position":3,
+        "lore":["§bThe Garden","","§7Spawn on your very own Garden.","§7Farm crops & welcome strange visitors!","","§eClick to warp!"],
+        "js":"ChatLib.command('warp garden')",
+        "color":"blue"
+    },
+    "mines":{
+        "item":"nbt:{id:\"minecraft:skull\",Count:1b,tag:{SkullOwner:{Id:\"f7474dc3-8075-4f96-b772-54131d999d8d\",hypixelPopulated:1b,Properties:{textures:[0:{Value:\"ewogICJ0aW1lc3RhbXAiIDogMTYwODMxNDY5NDY2OSwKICAicHJvZmlsZUlkIiA6ICI0MWQzYWJjMmQ3NDk0MDBjOTA5MGQ1NDM0ZDAzODMxYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJNZWdha2xvb24iLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmIyMGIyM2MxYWEyYmUwMjcwZjAxNmI0YzkwZDZlZTZiODMzMGExN2NmZWY4Nzg2OWQ2YWQ2MGIyZmZiZjNiNSIKICAgIH0KICB9Cn0=\"}]},Name:\"§f7474dc3-8075-4f96-b772-54131d999d8d\"},display:{Lore:[0:\"§7§7Explore more of SkyBlock to\",1:\"§7find this location!\"],Name:\"§cUndiscovered Island\"}},Damage:3s}",
+        "position":4,
+        "lore":["§aDwarven Mines","","§7Discover new ores & minerals while","§7levelling up your Heart of the Mountain!","","§eClick to warp!"],
+        "js":"ChatLib.command('warp mines')"
+    },
+    "ch":{
+        "item":"nbt:{id:\"minecraft:skull\",Count:1b,tag:{SkullOwner:{Id:\"70b0292e-2443-4c2e-b505-7236ddd3577a\",hypixelPopulated:1b,Properties:{textures:[0:{Value:\"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjFkYmUzMGIwMjdhY2JjZWI2MTI1NjNiZDg3N2NkN2ViYjcxOWVhNmVkMTM5OTAyN2RjZWU1OGJiOTA0OWQ0YSJ9fX0=\"}]},Name:\"§70b0292e-2443-4c2e-b505-7236ddd3577a\"},display:{Lore:[0:\"§8/warp crystals\",1:\"\",2:\"§7A vast series of caves and random\",3:\"§7structures with tougher Stone and\",4:\"§7special gems!\",5:\"\",6:\"§7Main skill: §bMining\",7:\"§7Island tier: §eIV\",8:\"\",9:\"§8Right-Click to warp!\",10:\"§eLeft-Click to open!\"],Name:\"§aCrystal Hollows§7 - §bEntrance\"}},Damage:3s}",
+        "position":5,
+        "lore":["§aCrystal Hollows","","§7A vast series of caves & structures","§7with rare gems & crystals!","","§eClick to warp!"],
+        "js":"ChatLib.command('warp ch')"
+    },
+    "drag":{
+        "item":"nbt:{id:\"minecraft:skull\",Count:1b,tag:{SkullOwner:{Id:\"f42bf540-e95b-4381-a3f3-2a7b879e6ef4\",hypixelPopulated:1b,Properties:{textures:[0:{Value:\"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTFjZDZkMmQwM2YxMzVlN2M2YjVkNmNkYWUxYjNhNjg3NDNkYjRlYjc0OWZhZjczNDFlOWZiMzQ3YWEyODNiIn19fQ==\"}]},Name:\"§f42bf540-e95b-4381-a3f3-2a7b879e6ef4\"},display:{Lore:[0:\"§8/warp drag\",1:\"\",2:\"§7Spawn inside the Dragon's Nest,\",3:\"§7ready to grind Zealots.\",4:\"\",5:\"§eClick to warp!\"],Name:\"§aThe End§7 - §bDragon's Nest\"}},Damage:3s}",
+        "position":6,
+        "lore":["§aDragon's Nest","","§7Spawn inside the Dragon's Nest,","§7ready to grind Zealots.","","§eClick to warp!"],
+        "js":"ChatLib.command('warp drag')"
+    },
+    "crimson":{
+        "item":"nbt:{id:\"minecraft:skull\",Count:1b,tag:{SkullOwner:{Id:\"8bfaf03f-f6f6-41bb-8159-a869a137f35b\",hypixelPopulated:1b,Properties:{textures:[0:{Value:\"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzM2ODdlMjVjNjMyYmNlOGFhNjFlMGQ2NGMyNGU2OTRjM2VlYTYyOWVhOTQ0ZjRjZjMwZGNmYjRmYmNlMDcxIn19fQ\"}]},Name:\"§8bfaf03f-f6f6-41bb-8159-a869a137f35b\"},display:{Lore:[0:\"§7§7Explore more of SkyBlock to\",1:\"§7find this location!\"],Name:\"§cUndiscovered Island\"}},Damage:3s}",
+        "position":7,
+        "lore":["§aCrimson Isle","","§7Fight bosses, find sea creatures &","§7battle for your favourite faction!","","§eClick to warp!"],
+        "js":"ChatLib.command('warp crimson')"
+    },
+    "dhub":{
+        "item":"nbt:{id:\"minecraft:skull\",Count:1b,tag:{SkullOwner:{Id:\"5b8a3f2e-4e9f-473f-97ff-b8e2181e5382\",hypixelPopulated:1b,Properties:{textures:[0:{Value:\"eyJ0aW1lc3RhbXAiOjE1Nzg0MDk0MTMxNjksInByb2ZpbGVJZCI6IjQxZDNhYmMyZDc0OTQwMGM5MDkwZDU0MzRkMDM4MzFiIiwicHJvZmlsZU5hbWUiOiJNZWdha2xvb24iLCJzaWduYXR1cmVSZXF1aXJlZCI6dHJ1ZSwidGV4dHVyZXMiOnsiU0tJTiI6eyJ1cmwiOiJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzliNTY4OTViOTY1OTg5NmFkNjQ3ZjU4NTk5MjM4YWY1MzJkNDZkYjljMWIwMzg5YjhiYmViNzA5OTlkYWIzM2QiLCJtZXRhZGF0YSI6eyJtb2RlbCI6InNsaW0ifX19fQ==\"}]},Name:\"§5b8a3f2e-4e9f-473f-97ff-b8e2181e5382\"},display:{Lore:[0:\"§8/warp dungeon_hub\",1:\"\",2:\"§7Group up with friends and take on\",3:\"§7challenging Dungeons.\",4:\"\",5:\"§eClick to warp!\"],Name:\"§aDungeon Hub§7 - §bSpawn\"}},Damage:3s}",
+        "position":8,
+        "lore":["§aDungeon Hub","","§7Group up with friends and take on","§7challenging Dungeons!","","§eClick to warp!"],
+        "js":"ChatLib.command('warp dhub')"
+    }
+}
