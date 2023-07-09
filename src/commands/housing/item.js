@@ -22,9 +22,10 @@ const Help = new Message([
     new TextComponent('&e /it id <id>\n').setClick('suggest_command', '/it id '),
     new TextComponent('&e /it addlore <lore>\n').setClick('suggest_command', '/it addlore '),
     new TextComponent('&e /it setline <line> <lore>\n').setClick('suggest_command', '/it addlore '),
-    new TextComponent('&e /it setlore <line1>;;<line2...<\n').setClick('suggest_command', '/it addlore '),
+    new TextComponent('&e /it setlore <line1>;;<line2...\n').setClick('suggest_command', '/it addlore '),
     new TextComponent('&e /it removelore <line>\n').setClick('suggest_command', '/it removeline '),
     new TextComponent('&e /it clearlore\n').setClick('suggest_command', '/it clearlore'),
+    new TextComponent('&e /it datavalue <int>\n').setClick('suggest_command', '/it datavalue '),
     new TextComponent('&e /it unbreakable').setClick('suggest_command', '/it unbreakable'),
 ]).setChatLineId(90017)
 
@@ -121,6 +122,13 @@ register('command', (...args) => {
             args = args.split(';;')
             NBTObject.tag.display.Lore.push(args)
         break;
+        
+        case 'datavalue':
+            if (parseInt(args[1])==NaN) return ChatLib.chat('&cEnter a valid integer!')
+            if (!NBTObject.tag) NBTObject.tag = {display:{Lore:[]}}
+            if (!NBTObject.tag.display) NBTObject.tag.display = {Lore:[]}
+            NBTObject.tag.display.Lore = [`§7Data Value: ${args[1]}`]
+        break;
 
         default: 
         return ChatLib.chat(Help)
@@ -128,5 +136,5 @@ register('command', (...args) => {
 
     setHeldItem(Utils.nbtToItem(NBTObject))
 
-    ChatLib.chat(new Message(`&aEdited &e${NBTObject.id}&a!`).setChatLineId(90023))
+    ChatLib.chat(new Message( new TextComponent(`&aEdited &e${NBTObject.id}&a!`).setHover('show_item', Utils.nbtObjToStr(NBTObject))).setChatLineId(90023))
 }).setName('it')

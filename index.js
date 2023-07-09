@@ -21,6 +21,9 @@ import './src/features/housing/fixSkulls'
 import './src/features/housing/bookmark';
 
 import './src/features/skyblock/warpWheel';
+// import './src/features/skyblock/hideGlass';
+// import './src/features/skyblock/witherFix';
+import './src/features/skyblock/tally';
 
 // Commands
 import './src/commands/general/diff+center';
@@ -47,4 +50,4 @@ register('command', () => {
     FileLib.delete(Metadata.name, 'assets/bookmark.json')
     
     ChatLib.chat('&e&lDEV&f &aPackaged!')
-}).setCommandName('ixm-package')
+}).setCommandName('hydrogen:package')

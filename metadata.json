@@ -1,9 +1,9 @@
 {
     "name":"Hydrogen",
-    "version": "0.5.0",
+    "version": "0.7.0",
     "description": "Welcome to Hydrogen!",
 
     "entry":"index.js",
     
-    "requires": ["Coffee","Vigilance","axios","ChestMenu"]
+    "requires": ["Coffee","Vigilance","axios","ChestMenu","Essence"]
 }

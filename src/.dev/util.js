@@ -1,5 +1,3 @@
-import createAchi from './libs/achievements'
-
 // ------------- //
 // Fancyfication //
 
@@ -17,22 +15,6 @@ const replaceArray = (str, from, to) => {
 const fancify = (text) => {
     return this.replaceArray(text, RegularFont, FancyFont)
 }
-
-
-// ------------- //
-// Notifications //
-
-/**
- * Generates and animates a popup
- * @param {string} item The name of an item (example: minecraft:stone)
- * @param {string} text1 The top line of the toast
- * @param {string} text2 The bottom line of the toast
- * @param {number} duration The duration of the toast in milliseconds
- */
-function notify(item, text1, text2, duration) {
-    createAchi(item, text1, text2, duration)
-}
-
 
 // ----- //
 // Items //
@@ -55,6 +37,16 @@ const nbtToItem = (nbtObject) => {
         str = str.replace(arr[i], arr[i].replace(/"/g,''));
 
     return getItemFromNBT(str);
+}
+
+const nbtObjToStr = (nbtObject) => {
+    let str = JSON.stringify(nbtObject, 0, 4),
+        arr = str.match(/".*?":/g);
+
+    for (let i = 0; i < arr.length; i++)
+        str = str.replace(arr[i], arr[i].replace(/"/g,''));
+
+    return str
 }
 
 const skullInSlot = (inv, slot, name, lore, uuid, texture) => {
@@ -101,7 +93,7 @@ const isCreative = () => {
 }
 
 const isOnHypixel = () => {
-    return Scoreboard.getLines()[0].toString().includes('🎂') && TabList.getHeader().includes('§r§bYou are playing on §r§e§lMC.HYPIXEL.NET§r')// The www.hypixel.net tablist entry includes a cake emoji, for whatever reason.
+    return Server.getMOTD().includes('Hypixel Network')
 }
 
 const getMode = () => {
@@ -192,5 +184,5 @@ function runWithDelay(ms, functions) {
     })
 }
 
-const Utils = { fancify, replaceArray, notify, getItemFromNBT, isCreative, isOnHypixel, getMode, runWithDelay, nbtToItem, skullInSlot, getCursorPosition, setCursorPosition, formatId, insert, Wheel }
+const Utils = { fancify, nbtObjToStr, replaceArray, getItemFromNBT, isCreative, isOnHypixel, getMode, runWithDelay, nbtToItem, skullInSlot, getCursorPosition, setCursorPosition, formatId, insert, Wheel }
 export default Utils

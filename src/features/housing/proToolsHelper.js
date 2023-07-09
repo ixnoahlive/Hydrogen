@@ -1,4 +1,6 @@
-import Settings from "../../.dev/config";
+import config from "../../.dev/config";
+import Essence from '../../../../Essence'
+
 const msg = new TextComponent('&7 is now off cooldown!')
 
 const criteria = [
@@ -15,17 +17,22 @@ const criteria = [
     '&r&aYour last operation has been undone.&r'
 ]
 const criteriaKeys = ['Fill','Set','Wireframe','Wall','Copy','Paste','Cut','Replace','Pro Tools','Undo']
+const criteriaCommands = ['fill','set','wireframe','wall','copy','paste','cut','replace','wand','undo']
 
-function timeMessage(protoolName) {
-    if (!Settings.featuresPT_Cooldown) return
+function timeMessage(protoolName, protoolCommand) {
+    if (!config.featuresPT_Cooldown) return
     setTimeout(() => {
-        ChatLib.chat(new Message([new TextComponent('&7'+protoolName),msg]).setChatLineId(90002))
+        if (config.genericEssential) {
+            Essence.sendNotification('Pro Tools', `${protoolName} is off cooldown!`, 1, () => Client.setCurrentChatMessage('/'+protoolCommand+' '), ()=>{})
+        } else {
+            ChatLib.chat(new Message([new TextComponent('&7'+protoolName),msg]).setChatLineId(90002))
+        }
         World.playSound('note.hat', 0.5, 1)
     }, 4000);
 }
 
 criteria.forEach((match) => {
-    register('chat', () => timeMessage(criteriaKeys[criteria.indexOf(match)])).setCriteria(match)
+    register('chat', () => timeMessage(criteriaKeys[criteria.indexOf(match)], criteriaCommands[criteria.indexOf(match)])).setCriteria(match)
 })
 // ------------------ //
 // Pro Tools Commands //

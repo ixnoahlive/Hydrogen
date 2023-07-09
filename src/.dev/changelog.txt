@@ -1,12 +1,21 @@
-* Added the long awaited /symbols command!
-* Added the also long awaited /bookmark system for Housing! (SkyBlock works, but is unsupported.)
+§bGeneral
+* Added /symbols
+* Added individual colour to wheel cells
+* Option to hide Biome Stick & Join Message spam
+* Reorganised categories to be more neat & tidy
+§bHousing
+* Added /bookmark <name?> (/bm alias)
+* Added item editing commands
+* Added Better UI
+§bSkyBlock
+* Added a block tally, more tallies to come.
+* Added a glass pane hider
 
-* Added Item Editing, so you can edit your items blazingly fast!
-* Added an option to enable improved UI, currently only 2 Housing menus are affected with many more planned!
+§3Fixes & Tweaks
+* Fixed Pro Tools Notifier
+* Fixed Panels just being entirely wacko
+* Fixed Hotkeys not saving regularly
+* Tweaked Pro Tools Notifier to also post a message
+    * It can also send an Essential notification!
 
-* More options for hiding spam have been added for Housing! Biome Stick & Join Messages!
-* Made commands category specific instead of showing up in all /hy categories.
-* Wheels now support custom colours per square!
-
-* Fixed Pro Tools Cooldown, and added better messages for the feature.
-* Fixed panels not showing up in chat sometimes.
+Enjoy!

@@ -1,4 +1,4 @@
-import { @Vigilant, @TextProperty, @ColorProperty, @ButtonProperty, @SwitchProperty, Color } from 'Vigilance';
+import { @Vigilant, @TextProperty, @ButtonProperty, @SwitchProperty } from 'Vigilance';
 import Metadata from '../.dev/metadata'
 
 const Desktop = Java.type('java.awt.Desktop');
@@ -42,9 +42,11 @@ class Settings {
     
     // ------- //
     // General //
+    
+    // mod
     @ButtonProperty({
         name:"Reload Hydrogen",
-        description: "Reloads certain features in the mod.",
+        description: "Reloads certain features in the mod",
         category: "General",
         subcategory: "Mod",
         placeholder: "Reload"
@@ -53,15 +55,6 @@ class Settings {
         ChatLib.command('hy-reload', true)
         Client.currentGui.close()
     }
-
-    @SwitchProperty({
-        name:"Hydrogen Extra",
-        description: "Enable to use &6unstable&r features, and basically any left over shit & slop I decided to throw into the mod for no reason at all.",
-        category: "General",
-        subcategory: "Real Shit",
-    })
-    genericExtra = false
-
     @ButtonProperty({
         name:"&bDiscord Server",
         description: "Questions, bugs and feedback for Hydrogen!",
@@ -72,30 +65,52 @@ class Settings {
     genericJoinDiscord() {
         Desktop.getDesktop().browse(DiscordInvite);
     }
+    @SwitchProperty({
+        name: "Essential Notifications",
+        description: "When enabled, replaces certain alerts in the mod to use an Essential Mod notification instead.",
+        category: "General",
+        subcategory: "Mod",
+    })
+    genericEssential = true
+
+    // real shit
+    @SwitchProperty({
+        name:"Hydrogen Extra",
+        description: "Enable to use &6unstable&r features, and basically any left over shit & slop I decided to throw into the mod for no reason at all",
+        category: "General",
+        subcategory: "Real Shit",
+    })
+    genericExtra = false
+
+    
 
     // --------- //
     // Hide Spam //
+
+    // lobby
     @SwitchProperty({
         name:"Hide Mystery Boxes",
-        description: "Hides Mystery Box messages from other people in lobbies.",
+        description: "Hides Mystery Box messages from other people in lobbies",
         category: "Hide Spam",
         subcategory: "Lobby",
     })
     featuresHide_Boxes = false
     @SwitchProperty({
         name:"Hide Join Messages",
-        description: "Hides MVP+ & MVP++ join messages in lobbies.",
+        description: "Hides MVP+ & MVP++ join messages in lobbies",
         category: "Hide Spam",
         subcategory: "Lobby",
     })
     featuresHide_Joins = false
     @SwitchProperty({
         name:"Hide Fish",
-        description: "Hides rare fish messages in lobbies.",
+        description: "Hides rare fish messages in lobbies",
         category: "Hide Spam",
         subcategory: "Lobby",
     })
     featuresHide_Fish = false
+
+    // advertising
     @SwitchProperty({
         name:"Hide /visit",
         description: "Hides all player sent messages containing /visit",
@@ -118,6 +133,7 @@ class Settings {
     })
     featuresHide_AdGuild = false
 
+    // player housing
     @SwitchProperty({
         name:"Hide Join Messages",
         description: "Hides all house join messages in Housing",
@@ -133,6 +149,7 @@ class Settings {
     })
     featuresHide_HouseBiome = false
 
+    // skyblock
     @SwitchProperty({
         name:"Hide /ah",
         description: "Hides all player sent messages containing /ah",
@@ -144,9 +161,11 @@ class Settings {
 
     // ---------- //
     // Automation //
+
+    // guilds
     @SwitchProperty({
         name:"Auto Guild",
-        description: "Automatically accepts guild join requests.",
+        description: "Automatically accepts guild join requests",
         category: "Automation",
         subcategory: "Guilds",
     })
@@ -154,7 +173,7 @@ class Settings {
 
     @SwitchProperty({
         name:"Auto Guild Welcome",
-        description: "Automatically welcomes guild members going online.",
+        description: "Automatically welcomes guild members going online",
         category: "Automation",
         subcategory: "Guilds",
     })
@@ -162,39 +181,41 @@ class Settings {
 
     @TextProperty({
         name:"Auto Guild Welcome Message",
-        description: "The custom message to send when a guild member goes online.",
+        description: "The custom message to send when a guild member goes online",
         category: "Automation",
         subcategory: "Guilds",
         placeholder: "welcome, $player!"
     })
     featuresAuto_GuildWelcome_message = "welcome, $player!"
 
+    // lobby fishing
     @SwitchProperty({
         name:"Auto Fish GG",
-        description: "Send a custom message when someone catches a rare fish in the lobby.",
+        description: "Send a custom message when someone catches a rare fish in the lobby",
         category: "Automation",
         subcategory: "Lobby Fishing",
     })
     featuresAuto_FishGG = false
     @TextProperty({
         name:"Auto Fish GG Message",
-        description: "Send a custom message when someone catches a rare fish in the lobby.",
+        description: "Send a custom message when someone catches a rare fish in the lobby",
         category: "Automation",
         subcategory: "Lobby Fishing",
         placeholder: "nice catch!"
     })
     featuresAuto_FishGG_message = "nice catch!"
 
+    // recieved cookie
     @SwitchProperty({
         name:"Auto Cookie Response",
-        description: "Respond to players giving you a cookie in Housing.",
+        description: "Respond to players giving you a cookie in Housing",
         category: "Automation",
         subcategory: "Recieved Cookie",
     })
     featuresAuto_Cookie = false
     @TextProperty({
         name:"Auto Cookie Response Message",
-        description: "Send a custom message when someone gives your house cookies. Split with semicolon, commands supported at own risk. Use $player for the player, $amnt for the amount.",
+        description: "Send a custom message when someone gives your house cookies. Split with semicolon, commands supported at own risk. Use $player for the player, $amnt for the amount",
         category: "Automation",
         subcategory: "Recieved Cookie",
         placeholder: "thank you for the cookies! <3"
@@ -204,9 +225,11 @@ class Settings {
 
     // ------- //
     // Housing //
+
+    // placeholders
     @SwitchProperty({
         name: "Placeholders",
-        description: "Enables Placeholders to be used when sending chat messages or commands.",
+        description: "Enables Placeholders to be used when sending chat messages or commands",
         category: "Housing",
         subcategory: "Placeholders"
     })
@@ -214,7 +237,7 @@ class Settings {
 
     @SwitchProperty({
         name: "Lock Placeholders",
-        description: "Blocks all attempts to update placeholders when new updates are installed.",
+        description: "Blocks all attempts to update placeholders when new updates are installed",
         category: "Housing",
         subcategory: "Placeholders"
     })
@@ -222,7 +245,7 @@ class Settings {
 
     @ButtonProperty({
         name: "Edit Placeholders",
-        description: "Open your placeholders.json file. To apply changes, type &f/hy-reload&r. If you want to restore it to default, type &f/restoreplaceholders&r!",
+        description: "Open your placeholders.json file. To apply changes, type &f/hy-reload&r. If you want to restore it to default, type &f/restoreplaceholders&r",
         category: "Housing",
         subcategory: "Placeholders",
         placeholder: "Open File", //ironic
@@ -236,14 +259,16 @@ class Settings {
         }   
     }
 
+    // pro tools
     @SwitchProperty({
         name: "Cooldown Notifier",
-        description: "Sends a chat message when the cooldown for your pro tools expire. This message disappears when a new one appears!",
+        description: "Sends a chat message when the cooldown for your pro tools expire. This message disappears when a new one appears",
         category: "Housing",
         subcategory: "Pro Tools",
     })
     featuresPT_Cooldown = true
 
+    // interface
     @SwitchProperty({
         name: "Better UI",
         description: "Improves certain menus in small ways with custom skulls",
@@ -252,14 +277,50 @@ class Settings {
     })
     featuresSkullUI = true
 
-
+    // menu wheel
     @SwitchProperty({
         name: "Creative Check",
-        description: "Only allows you to access the wheel in creative mode, to prevent using it on accident.",
+        description: "Only allows you to access the wheel in creative mode, to prevent using it on accident",
         category: "Housing",
         subcategory: "Menu Wheel",
     })
     featuresWheel_Checksum = true
+
+    // -------- //
+    // SKYBLOCK //
+
+    // @SwitchProperty({
+    //     name: "No Glass Pane",
+    //     description: "Hides the gray stained glass pane being used for blank areas in GUIs\n&cUnstable: May break in some GUIs. Report bugs in the Discord!",
+    //     category: "SkyBlock",
+    //     subcategory: "Interface"
+    // })
+    // featuresSb_HideGlass = false
+
+    @SwitchProperty({
+        name: "Block Tally",
+        description: "Tallies the amount of blocks you've broken in the past second in chat",
+        category: "SkyBlock",
+        subcategory: "Tallying"
+    })
+    featuresSb_TallyBlocks = false
+
+    @TextProperty({
+        name:"Timeout",
+        description: "The time with no actions in seconds that it takes for the tally to finish",
+        category: "SkyBlock",
+        subcategory: "Tallying",
+        placeholder: "1"
+    })
+    featuresSb_TallyTimeout = "1"
+
+    // @SwitchProperty({
+    //     name: "Wither Fix",
+    //     description: "Hides random wither boss bars appearing in the HUD",
+    //     category: "SkyBlock",
+    //     subcategory: "§rMiscellaneous"
+    // })
+    // featuresSb_MiscWither = true
 
     constructor() {
         this.initialize(this);
@@ -284,6 +345,8 @@ class Settings {
 
         this.setCategoryDescription("SkyBlock", `&b&lHydrogen \n&fMade by ixNoah`)
             this.setSubcategoryDescription('SkyBlock','Warp Wheel', `A grid to quickly access warps, set hotkey in Controls`)
+            this.setSubcategoryDescription('SkyBlock','Tallying', `Count & log actions in chat to see how fast you're going`)
+            this.setSubcategoryDescription('SkyBlock','§rMiscellaneous', `Small things that don't fit into any categories`)
         
     }
 }

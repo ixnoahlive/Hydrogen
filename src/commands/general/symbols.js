@@ -12,7 +12,7 @@ Object.keys(Symbols).forEach(Category => {
   Object.keys(Symbols[Category]).forEach(Symbol => {
     Components.push(
       new TextComponent('&a'+Symbols[Category][Symbol]+' ')
-        .setClick('run_command', `/hydrogen-placesymbol ${Symbols[Category][Symbol]}`)
+        .setClick('run_command', `/hydrogen:placesymbol ${Symbols[Category][Symbol]}`)
         .setHover('show_text', `&ePaste &a${Symbols[Category][Symbol]} &eSymbol`)
     )
   })
@@ -30,4 +30,4 @@ register('command', (...str) => {
   if (pos==-1) return -1
   Client.setCurrentChatMessage(Utils.insert(Client.getCurrentChatMessage(), str.join(' '), pos))
   Utils.setCursorPosition(pos+1)
-}).setName('hydrogen-placesymbol')
+}).setName('hydrogen:placesymbol')

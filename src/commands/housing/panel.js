@@ -1,5 +1,5 @@
 const commands = {
-    "&fOpen Menu:": [
+    "&fOpen Menu: ": [
         ['&7[Functions] ', '/functions', '&7/functions'],
         ['&7[Commands] ', '/commands', '&7/commands'],
         ['&7[Regions] ', '/regions', '&7/regions'],
@@ -32,20 +32,29 @@ const commands = {
 }
 
 const categoryCount = Object.keys(commands).length
-const breakComponent = new TextComponent('&9&m-----------------------------------------------------&r').setClick('run_command', '/ixm-clearpanels').setHover('show_text','&9Click to close panel')
+const breakComponent = new TextComponent('&9&m-----------------------------------------------------&r').setClick('run_command', '/hydrogen:clearpanels').setHover('show_text','&9Click to close panel')
 const components = [breakComponent]
-Object.entries(commands).forEach(([v, k], i) => {
-    // Category
-    components.push(k)
+// Object.entries(commands).forEach(([v, k], i) => {
+//     // Category
+//     components.push(k)
 
-    // The commands
-    commands[v].forEach(([display, command, hoverText]) => {
-        components.push(new TextComponent(display).setClick("run_command", command).setHover("show_text", hoverText))
+//     // The commands
+//     commands[v].forEach(([display, command, hoverText]) => {
+//         components.push(new TextComponent(display).setClick("run_command", command).setHover("show_text", hoverText))
+//     })
+
+//     if (i !== categoryCount-1) return
+//     components.push("\n")
+// })
+
+Object.keys(commands).forEach(category => {
+    components.push(category+' ')
+    commands[category].forEach(commandData => {
+        components.push(new TextComponent(commandData[0]).setClick('run_command', commandData[1]).setHover('show_text', commandData[2]))
     })
-
-    if (i !== categoryCount-1) return
-    components.push("\n")
+    components.push('\n')
 })
+
 components.push(breakComponent)
 
 register('command', () => {
@@ -54,4 +63,4 @@ register('command', () => {
     
 register('command', () => {
     ChatLib.clearChat(90001)
-}).setName('ixm-clearpanels')
+}).setName('hydrogen:clearpanels')
