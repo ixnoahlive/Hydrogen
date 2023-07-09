@@ -59,7 +59,7 @@ components.push(breakComponent)
 
 register('command', () => {
     ChatLib.chat(new Message(components).setChatLineId(90001))
-}).setName('panel')
+}).setName('panel').setAliases('pn')
     
 register('command', () => {
     ChatLib.clearChat(90001)

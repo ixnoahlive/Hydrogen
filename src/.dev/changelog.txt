@@ -9,7 +9,7 @@
 * Added Better UI
 §bSkyBlock
 * Added a block tally, more tallies to come.
-* Added a glass pane hider
+* Added a glass pane hider (experimental)
 
 §3Fixes & Tweaks
 * Fixed Pro Tools Notifier

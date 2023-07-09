@@ -299,7 +299,7 @@ class Settings {
 
     @SwitchProperty({
         name: "Block Tally",
-        description: "Tallies the amount of blocks you've broken in the past second in chat",
+        description: "Tallies your average blocks per second in chat",
         category: "SkyBlock",
         subcategory: "Tallying"
     })
