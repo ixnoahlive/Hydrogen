@@ -51,6 +51,6 @@ register('command', (args) => {
             config.save()
         break;
         default:
-            ChatLib.chat('&cInvalid usage! Usage: /tally blocks')
+            ChatLib.chat('&cInvalid usage! Usage: /tally block')
     }
 }).setName('tally')

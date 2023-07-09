@@ -12,10 +12,13 @@
 * Added a glass pane hider (experimental)
 
 §3Fixes & Tweaks
+* Fixed #rng
 * Fixed Pro Tools Notifier
 * Fixed Panels just being entirely wacko
 * Fixed Hotkeys not saving regularly
 * Tweaked Pro Tools Notifier to also post a message
     * It can also send an Essential notification!
+* Hopefully fixed issues regarding Mac OS.
+    * Personally I don't use Mac OS, so I'm not sure.
 
 Enjoy!
