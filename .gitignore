@@ -3,3 +3,4 @@ assets/placeholders.json
 .ixm
 ct_reviewers_readme.txt
 config.toml
+*.toml

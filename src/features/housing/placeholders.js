@@ -12,8 +12,6 @@ register('messageSent', (message, event) => {
 
     let newMessage = message.replace(/#[\w:.'`\-/_&1234567890/]+/g,  match => {
         match = match.split('/')
-
-        console.log(match)
         
         if (!Placeholders.main[match[0]]) return match.join('/')
         if (!Placeholders.main[match[0]].startsWith('js:')) return Placeholders.main[match[0]]

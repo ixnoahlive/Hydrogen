@@ -1,21 +1,5 @@
-§bGeneral
-* Added /symbols
-* Added individual colour to wheel cells
-* Option to hide Biome Stick & Join Message spam
-* Reorganised categories to be more neat & tidy
-§bHousing
-* Added /bookmark <name?> (/bm alias)
-* Added item editing commands
-* Added Better UI
-§bSkyBlock
-* Added a block tally, more tallies to come.
-* Added a glass pane hider (experimental)
-
-§3Fixes & Tweaks
-* Fixed Pro Tools Notifier
-* Fixed Panels just being entirely wacko
-* Fixed Hotkeys not saving regularly
-* Tweaked Pro Tools Notifier to also post a message
-    * It can also send an Essential notification!
+§bChanges
+- Fixed Visiting Rules menu to not update properly
+- Added internal systems to Wheel API to prepare for upcoming features
 
 Enjoy!

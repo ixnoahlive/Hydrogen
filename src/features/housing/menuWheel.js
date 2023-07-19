@@ -9,6 +9,9 @@ const WheelData = Utils.Wheel.parseJson( FileLib.read(Metadata.name, 'assets/whe
 const bind = new KeyBind('Menu Wheel', Keyboard.KEY_NONE, '§bHydrogen§r - Housing')
 const WheelGui = new Gui()
 
+console.log(Utils.getMode().name)
+console.log(Utils.getMode().isLobby==false)
+
 bind.registerKeyPress(()=>{if ((Settings.featuresWheel_Checksum && Utils.isCreative() || !Settings.featuresWheel_Checksum) && Utils.getMode().name=="HOUSING" && Utils.getMode().isLobby==false ) WheelGui.open()})
 
 let Screen = { width: Renderer.screen.getWidth(), height: Renderer.screen.getHeight() }

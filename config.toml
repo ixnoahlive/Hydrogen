@@ -1,8 +1,11 @@
 
 [general]
 
+	[general.mod]
+		essential_notifications = false
+
 	[general.real_shit]
-		hydrogen_extra = true
+		hydrogen_extra = false
 
 [automation]
 
@@ -37,8 +40,8 @@
 [hide_spam]
 
 	[hide_spam.lobby]
-		hide_join_messages = false
-		hide_mystery_boxes = false
+		hide_join_messages = true
+		hide_mystery_boxes = true
 		hide_fish = false
 
 	[hide_spam.skyblock]
@@ -47,9 +50,21 @@
 	[hide_spam.advertising]
 		"hide_/p_join" = false
 		"hide_/visit" = false
-		"hide_/g_join" = false
+		"hide_/g_join" = true
 
 	[hide_spam.player_housing]
 		hide_join_messages = false
-		hide_biome_stick = false
+		hide_biome_stick = true
+
+[skyblock]
+
+	[skyblock."§rmiscellaneous"]
+		wither_fix = false
+
+	[skyblock.tallying]
+		block_tally = false
+		timeout = "1"
+
+	[skyblock.interface]
+		no_glass_pane = true
 

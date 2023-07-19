@@ -1,6 +1,8 @@
 // ------------- //
 // Fancyfication //
 
+import Essence from "../../../Essence";
+
 const FancyFont = ['Ａ', 'Ｂ', 'Ｃ', 'Ｄ', 'Ｅ', 'Ｆ', 'Ｇ', 'Ｈ', 'Ｉ', 'Ｊ', 'Ｋ', 'Ｌ', 'Ｍ', 'Ｎ', 'Ｏ', 'Ｐ', 'Ｑ', 'Ｒ', 'Ｓ', 'Ｔ', 'Ｕ', 'Ｖ','Ｗ','Ｘ', 'Ｙ', 'Ｚ', 'ａ', 'ｂ', 'ｃ', 'ｄ', 'ｅ', 'ｆ', 'ｇ', 'ｈ', 'ｉ', 'ｊ', 'ｋ', 'ｌ', 'ｍ', 'ｎ', 'ｏ', 'ｐ', 'ｑ', 'ｒ', 'ｓ', 'ｔ', 'ｕ', 'ｖ', 'ｗ', 'ｘ', 'ｙ', 'ｚ']
 const RegularFont = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
@@ -51,6 +53,7 @@ const nbtObjToStr = (nbtObject) => {
 
 const skullInSlot = (inv, slot, name, lore, uuid, texture) => {
     const item = inv.getStackInSlot(slot)
+    if (item==null) return;
     const itemNBT = NBT.toObject(item.getNBT())
 
     itemNBT.Damage = 3
@@ -93,7 +96,7 @@ const isCreative = () => {
 }
 
 const isOnHypixel = () => {
-    return Server.getMOTD().includes('Hypixel Network')
+    return Essence.isHypixel()
 }
 
 const getMode = () => {
@@ -109,6 +112,7 @@ const getMode = () => {
 
 const Wheel = {
     positions: {
+        // x
         1: [-32, -32],
         2: [0, -32],
         3: [32, -32],
@@ -117,6 +121,28 @@ const Wheel = {
         6: [0, 32],
         7: [-32, 32],
         8: [-32, 0],
+
+        // 1xx
+        101: [-80, -96],
+        102: [-48, -96],
+        103: [-16, -96],
+        104: [16, -96],
+        105: [48, -96],
+        106: [80, -96],
+
+        107: [-80, -64],
+        108: [-48, -64],
+        109: [-16, -64],
+        110: [16, -64],
+        111: [48, -64],
+        112: [80, -64],
+
+        113: [-80, -32],
+        114: [-48, -32],
+        115: [-16, -32],
+        116: [16, -32],
+        117: [48, -32],
+        118: [80, -32]
     },
     colors: {
         'red': [138, 36, 36],

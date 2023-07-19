@@ -15,10 +15,14 @@ const textsGeneral = {
     "/seen <player>":"Check a player's status (may be outdated)",
 }
 const textsHousing = {
+    "/it":"Edit your currently held item (CREATIVE only)",
     "/panel":"Opens a panel with House management options",
     "/diff <x y z> <x y z>":"Find the space between two points",
     "/cent <x y z> <x y z>":"Find the center between two points",
     "/restoreplaceholders":"Resets your placeholders to default",
+}
+const textsSkyblock = {
+    "/tally <name>":"Manage tallies without going into /hy"
 }
 
 const padText = (text, padChar, maxLength) => {
@@ -32,6 +36,7 @@ const padText = (text, padChar, maxLength) => {
 
 const descGeneral = Object.entries(textsGeneral).reduce((a, [key, value]) => a + padText(`\n&b${key.replace(/\</g, "&3<")}&7 - ${value}`, ` &0`, 320), "")
 const descHousing = Object.entries(textsHousing).reduce((a, [key, value]) => a + padText(`\n&b${key.replace(/\</g, "&3<")}&7 - ${value}`, ` &0`, 320), "")
+const descSkyblock = Object.entries(textsSkyblock).reduce((a, [key, value]) => a + padText(`\n&b${key.replace(/\</g, "&3<")}&7 - ${value}`, ` &0`, 320), "")
 
 @Vigilant(Metadata.name, Metadata.name, {
     getCategoryComparator: () => (a, b) => {
@@ -343,7 +348,7 @@ class Settings {
             this.setSubcategoryDescription('Housing','Placeholders', `Quick chat shortcuts to optimise your workflow`)
             this.setSubcategoryDescription('Housing','Pro Tools', `Features to upgrade Housing Pro Tools`)
 
-        this.setCategoryDescription("SkyBlock", `&b&lHydrogen \n&fMade by ixNoah`)
+        this.setCategoryDescription("SkyBlock", `&b&lHydrogen \n&fMade by ixNoah\n${descSkyblock}`)
             this.setSubcategoryDescription('SkyBlock','Warp Wheel', `A grid to quickly access warps, set hotkey in Controls`)
             this.setSubcategoryDescription('SkyBlock','Tallying', `Count & log actions in chat to see how fast you're going`)
             this.setSubcategoryDescription('SkyBlock','§rMiscellaneous', `Small things that don't fit into any categories`)
