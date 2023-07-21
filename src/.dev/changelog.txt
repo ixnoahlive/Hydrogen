@@ -1,5 +1,7 @@
+§bData Management
+- This update's main feature is making data management easier in Housing!
+- Import & export stats!
 §bChanges
-- Fixed Visiting Rules menu to not update properly
-- Added internal systems to Wheel API to prepare for upcoming features
+
 
 Enjoy!

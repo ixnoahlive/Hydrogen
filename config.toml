@@ -2,7 +2,7 @@
 [general]
 
 	[general.mod]
-		essential_notifications = false
+		essential_notifications = true
 
 	[general.real_shit]
 		hydrogen_extra = false
@@ -29,6 +29,10 @@
 
 	[housing.pro_tools]
 		cooldown_notifier = true
+
+	[housing.data]
+		stats_json = true
+		advanced_stats = true
 
 	[housing.placeholders]
 		placeholders = true

@@ -264,6 +264,15 @@ class Settings {
         }   
     }
 
+    // stat tools
+    @SwitchProperty({
+        name: "Advanced Stats",
+        description: "Organises stats with /viewstats & /viewglobalstats, and also adds a Copy JSON button to export it as a JSON object.",
+        category: "Housing",
+        subcategory:"Data"
+    })
+    featuresData_StatExporter = true
+
     // pro tools
     @SwitchProperty({
         name: "Cooldown Notifier",

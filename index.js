@@ -19,6 +19,7 @@ import './src/features/housing/proToolsHelper';
 import './src/features/housing/menuWheel';
 import './src/features/housing/fixSkulls'
 import './src/features/housing/bookmark';
+import './src/features/housing/statTools';
 // import './src/features/housing/itemMenu';
 // import './src/features/housing/datapicker'
 
