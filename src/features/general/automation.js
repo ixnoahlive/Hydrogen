@@ -33,7 +33,7 @@ register('chat', (amnt, player, event) => {
                     .replace(/\$amnt/, parseInt(amnt))
                 )
             }, delayMs);
-            delayMs += 250
+            delayMs += 400
         })
     }
 }).setCriteria('You received ${amnt} cookies from ${player}!')
