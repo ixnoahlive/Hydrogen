@@ -1,12 +1,9 @@
-import Placeholders from "../features/housing/placeholders"
 import Bookmarks from "../features/housing/bookmark"
 import Metadata from '../.dev/metadata'
 import Utils from "../.dev/util"
 
 register('command', (...args) => {
     if (!args || args[0]!=='quiet') ChatLib.chat('&7Reloading Hydrogen...')
-
-    Placeholders.main = JSON.parse(FileLib.read(Metadata.name,'assets/placeholders.json'))
 
     Bookmarks.players = JSON.parse(FileLib.read(Metadata.name, 'assets/bookmarks.json'))
 

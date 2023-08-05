@@ -1,6 +1,4 @@
 import Metadata from '../.dev/metadata'
-import Settings from '../.dev/config'
-import Placeholders from './housing/placeholders'
 
 const msg = [
     '&b&lHydrogen',
@@ -30,7 +28,6 @@ if (!FileLib.exists(Metadata.name, '.ixm')) {
         ChatLib.command('hy-reload quiet', true)
     }, 1000)
     FileLib.write(`./config/ChatTriggers/modules/${Metadata.name}/.ixm`, Metadata.version)
-    FileLib.write(Metadata.name, 'assets/placeholders.json', Placeholders.default)
     FileLib.write(Metadata.name, 'assets/bookmarks.json', '[{"name":"ixNoah","uuid":"58583751-5da7-46fa-834b-1e82c75295fb"}]', true)
 
 
@@ -51,8 +48,5 @@ if (!FileLib.exists(Metadata.name, '.ixm')) {
         new TextComponent('&7 '),
         new TextComponent('&b[Open Menu]\n').setClick('run_command','/hy').setHover('show_text','&bRuns /hy to open the menu')
     ))
-
-    if (!Settings.featuresPlaceholderLock) ChatLib.command('restoreplaceholders quiet', true)
-
     FileLib.write(`./config/ChatTriggers/modules/${Metadata.name}/.ixm`, Metadata.version)
 }

@@ -1,4 +1,5 @@
 import Utils from "../../.dev/util";
+import Metadata from "../../.dev/metadata";
 
 const C10PacketCreativeInventoryAction = Java.type(
   "net.minecraft.network.play.client.C10PacketCreativeInventoryAction"
@@ -36,8 +37,10 @@ register('command', (...args) => {
     if (!HeldItem && args) return ChatLib.chat('&cYou need to be holding an item to use this command!')
     if (!args) return ChatLib.chat(Help)
 
-    const NBTObject = NBT.toObject(HeldItem.getNBT())
-    
+    const NBTObject = NBT.toObject(HeldItem.getNBT())    
+    let specialOperation = false;
+
+    let templateList;
     
     switch(args[0]) {
         case 'id':
@@ -120,7 +123,8 @@ register('command', (...args) => {
 
             args = ChatLib.addColor(args.join(' '))
             args = args.split(';;')
-            NBTObject.tag.display.Lore.push(args)
+            args = args.map(line => '§7'+line)
+            NBTObject.tag.display.Lore = args
         break;
         
         case 'datavalue':
@@ -130,11 +134,65 @@ register('command', (...args) => {
             NBTObject.tag.display.Lore = [`§7Data Value: ${args[1]}`]
         break;
 
+        case 'savetemplate':
+            specialOperation = true;
+
+            if (!args[1]) return ChatLib.chat('&cPlease define a name for this template!')
+            
+            templateList = JSON.parse(FileLib.read(Metadata.name, 'usercontent/templates.json'))
+            if (templateList[args[1]]) ChatLib.chat(new TextComponent('&7This template already exists & will be overwritten. Click to copy the old contents.').setClick('run_command',`/ct copy ${templateList[args[1]]}`))
+
+            let lore = NBTObject?.tag?.display?.Lore
+            if (!lore) lore = []
+
+            templateList[args[1]] = lore
+
+            FileLib.write(Metadata.name, 'usercontent/templates.json', JSON.stringify(templateList, null, 4))
+
+            ChatLib.chat(`&aWrote template to ${args[1]}!`)
+        break; 
+
+        case 'loadtemplate':
+            specialOperation = true
+
+            if (!args[1]) return ChatLib.chat('&cPlease specify the template to load! Type /it templates to list them!')
+            templateList = JSON.parse(FileLib.read(Metadata.name, 'usercontent/templates.json'))
+
+            if (!templateList[args[1]]) return ChatLib.chat('&cThis template doesn\'t exist!');
+            let SavedLines = templateList[args[1]]
+            
+            let data = {}
+            if (args[2]) {
+                args // ['loadtemplate','templatename','key=my','awesome','stuff|key2=cool line \|']
+                    .slice(2) // ['key=my','awesome','stuff|key2=cool']
+                    .join(' ') // "key=my awesome stuff|key2=cool line \|"
+                    .replace(/\\\|/g, '§§') // "key=my awesome stuff|key2=cool line §§"
+                    .split(' | ') // ["key=my awesome stuff","key2=cool line §§"]
+                    .map(key => key.replace(/§§/g, '|')) // ["key=my awesome stuff","key2=cool line |"]
+                    .forEach(entry => {
+                        const entryTemp = entry.split('=')
+                        entryTemp.shift()
+                        entryTemp.join('=')
+
+                        data[entry.split('=', 1)] = entryTemp
+                    })
+            }
+
+            Object.keys(data).forEach((key) => {
+                SavedLines = SavedLines.map(line => line.replace(new RegExp(`{{${key}}}`, 'g'), data[key]))
+            })
+
+            HeldItem.setLore(SavedLines)
+            setHeldItem(HeldItem)
+            ChatLib.chat('&aLoaded template onto held item!')
+        break;
+
         default: 
         return ChatLib.chat(Help)
     }
 
-    setHeldItem(Utils.nbtToItem(NBTObject))
+    if (specialOperation) return;
 
+    setHeldItem(Utils.nbtToItem(NBTObject))
     ChatLib.chat(new Message( new TextComponent(`&aEdited &e${NBTObject.id}&a!`).setHover('show_item', Utils.nbtObjToStr(NBTObject))).setChatLineId(90023))
 }).setName('it')

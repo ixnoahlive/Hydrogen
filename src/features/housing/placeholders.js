@@ -1,11 +1,9 @@
 import Settings from '../../.dev/config'
-import Utils from '../../.dev/util'
 import Metadata from '../../.dev/metadata'
 
-const Default = FileLib.read(Metadata.name,'assets/placeholders_default.json')
 const Main = JSON.parse(FileLib.read(Metadata.name, 'assets/placeholders.json'))
 
-const Placeholders = { main: Main, default: Default }
+const Placeholders = { main: Main }
 
 register('messageSent', (message, event) => {
     if (!Settings.featuresPlaceholders) return
@@ -24,14 +22,3 @@ register('messageSent', (message, event) => {
     cancel(event);
     ChatLib.say(newMessage);
 });
-
-register('command', (...args) => {
-    if (!args || args[0]!=='quiet') ChatLib.chat('&7Resetting placeholders to defaults...')
-    FileLib.write(Metadata.name, 'assets/placeholders.json', Placeholders.default)
-    
-    ChatLib.command(`hy-reload ${args.join(' ')}`, true)
-
-    if (!Settings.featuresPlaceholders && args[0]!=='quiet') ChatLib.chat('&c&lWARNING&7 You have Placeholders disabled!')
-}).setName('restoreplaceholders')
-
-export default Placeholders;

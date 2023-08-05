@@ -1,4 +1,4 @@
-import { @Vigilant, @TextProperty, @ButtonProperty, @SwitchProperty } from 'Vigilance';
+import { @Vigilant, @TextProperty, @ButtonProperty, @SwitchProperty, @PercentSliderProperty } from 'Vigilance';
 import Metadata from '../.dev/metadata'
 
 const Desktop = Java.type('java.awt.Desktop');
@@ -227,10 +227,34 @@ class Settings {
     })
     featuresAuto_Cookie_message = "thank you for the cookies! <3"
 
+    // housing filters
+    @SwitchProperty({
+        name: "Enable Autofilter",
+        description: "Automatically mutes players in your house & logs their message for later review",
+        category: "Automation",
+        subcategory: "Housing Autofilter",
+    })
+    featuresAuto_Filter = false
+
+    @TextProperty({
+        name:"Autofilter Messages",
+        description: "Messages to filter, seperate with a double semicolon (;;)",
+        category: "Automation",
+        subcategory: "Housing Autofilter",
+        placeholder: "bad words;;more bad words"
+    })
+    featuresAuto_Filter_List = "bad words;;more bad words"
+
+    @PercentSliderProperty({
+        name: 'Sensitivity',
+        description: 'How close to the original message it must be to trigger, 100% being an exact match & 0% being a wild machine gun taking down everything.',
+        category: 'Automation',
+        subcategory: 'Housing Autofilter'
+    })
+    featuresAuto_FilterSensitivity = 1.00;
 
     // ------- //
     // Housing //
-
     // placeholders
     @SwitchProperty({
         name: "Placeholders",
@@ -239,30 +263,6 @@ class Settings {
         subcategory: "Placeholders"
     })
     featuresPlaceholders = true
-
-    @SwitchProperty({
-        name: "Lock Placeholders",
-        description: "Blocks all attempts to update placeholders when new updates are installed",
-        category: "Housing",
-        subcategory: "Placeholders"
-    })
-    featuresPlaceholderLock = false
-
-    @ButtonProperty({
-        name: "Edit Placeholders",
-        description: "Open your placeholders.json file. To apply changes, type &f/hy-reload&r. If you want to restore it to default, type &f/restoreplaceholders&r",
-        category: "Housing",
-        subcategory: "Placeholders",
-        placeholder: "Open File", //ironic
-    })
-    featuresPlaceholders_openFile() {
-        if (FileLib.exists(`./config/ChatTriggers/${Metadata.name}/assets/placeholders.json`)) {
-            Desktop.getDesktop().open(placeholdersJson);
-        } else {
-            ChatLib.chat('&cYou have no placeholders file! Generate one using /restoreplaceholders!')
-            Client.currentGui.close()
-        }   
-    }
 
     // stat tools
     @SwitchProperty({
@@ -345,6 +345,7 @@ class Settings {
         this.setCategoryDescription("Automation", `&b&lHydrogen \n&fMade by ixNoah\n\nAutomate certain actions (Use cautiously)`)
             this.setSubcategoryDescription('Automation', 'Guilds', 'Automatic actions related to Guilds')
             this.setSubcategoryDescription('Automation', 'Lobby Fishing', 'Automatic actions related to Lobby Fishing')
+            this.setSubcategoryDescription('Automation', 'Recieve Cookie', 'Automatic actions related to Hoousing Cookies')
 
         this.setCategoryDescription("Hide Spam", `&b&lHydrogen \n&fMade by ixNoah\n\nOnly applies to messages sent in public chat!`)
             this.setSubcategoryDescription('Hide Spam','Lobby', `Lobby related messages`)
@@ -356,6 +357,9 @@ class Settings {
             this.setSubcategoryDescription('Housing','Menu Wheel', `A grid to quickly access menus, set hotkey in Controls`)
             this.setSubcategoryDescription('Housing','Placeholders', `Quick chat shortcuts to optimise your workflow`)
             this.setSubcategoryDescription('Housing','Pro Tools', `Features to upgrade Housing Pro Tools`)
+            this.setSubcategoryDescription('Housing','Interface', `Interface-related mods for Housing`)
+            this.setSubcategoryDescription('Housing','Data', `Features to help with data management`)
+
 
         this.setCategoryDescription("SkyBlock", `&b&lHydrogen \n&fMade by ixNoah\n${descSkyblock}`)
             this.setSubcategoryDescription('SkyBlock','Warp Wheel', `A grid to quickly access warps, set hotkey in Controls`)

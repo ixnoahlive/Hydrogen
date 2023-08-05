@@ -1,0 +1,25 @@
+{
+    "_example1": [
+        "This is what a template looks like. Variables like {{this}} will be replaced if defined!"
+    ],
+    "_example2": [
+        "Don't forget to add a comma after every entry if you're editing the code!"
+    ],
+    "_example3": [
+        "Just don't put a comma at the end of the last one, and you should be good to go."
+    ],
+    "sword": [
+        "§7§7Damage: §c+{{damage}}",
+        "§7§7Strength: §c+{{strength}}",
+        "§7§7Cool Stat: §c+{{cool}}",
+        "§7§1",
+        "§7&{{rarity_color}}§l{{rarity_name}}"
+    ],
+    "ball": [
+        "§7§8Dodgeball Skin",
+        "§7§1",
+        "§7§7{{desc}}",
+        "§7§1",
+        "§7&{{color}}§l{{rarity}}"
+    ]
+}

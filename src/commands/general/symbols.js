@@ -1,19 +1,18 @@
 import Metadata from "../../.dev/metadata"
 import Utils from "../../.dev/util"
 
-const GuiTextField = Java.type('net.minecraft.client.gui.GuiNewChat')
 const Symbols = JSON.parse(FileLib.read(Metadata.name, 'assets/symbols.json'))
 
 const Components = []
 
 Object.keys(Symbols).forEach(Category => {
-  Components.push(`\n&e${Category} Symbols:\n&a`)
+  Components.push(`\n&e${Category}\n`)
 
   Object.keys(Symbols[Category]).forEach(Symbol => {
     Components.push(
-      new TextComponent('&a'+Symbols[Category][Symbol]+' ')
+      new TextComponent('&b'+Symbols[Category][Symbol]+' ')
         .setClick('run_command', `/hydrogen:placesymbol ${Symbols[Category][Symbol]}`)
-        .setHover('show_text', `&ePaste &a${Symbols[Category][Symbol]} &eSymbol`)
+        .setHover('show_text', `&ePaste &b${Symbols[Category][Symbol]} &esymbol`)
     )
   })
 })

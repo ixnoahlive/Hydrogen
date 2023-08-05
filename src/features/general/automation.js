@@ -21,7 +21,6 @@ register('chat', (amnt, player, event) => {
         if (Settings.featuresAuto_Cookie_message.trim().length==0) return ChatLib.chat('&cWarning: You have Auto Cookie Response enabled, but no message is set!')
         
         player = ChatLib.removeFormatting(player.split(' ')[player.split(' ').length-1].trim())
-        console.log(player)
 
         let delayMs = 100
         Settings.featuresAuto_Cookie_message.split(';').forEach((message) => {

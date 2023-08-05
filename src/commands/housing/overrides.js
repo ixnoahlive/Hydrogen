@@ -3,8 +3,6 @@
 // on Housing, all in one file to save space. //
 // ------------------------------------------ //
 
-import Placeholders from '../../features/housing/placeholders';
-
 register('command', (...args) => {
     switch (args[0]) {
         
@@ -48,6 +46,10 @@ register('chat', (...args) => {
         ChatLib.chat(new Message(placeholders.join('\n')))
     }, 1);
 }).setCriteria('&r  &r&6%&r&6stat.global/&r&7<key>&r&6%&r')
+
+register('command', (...args) => {
+    ChatLib.command(`theme ${args.join(' ')}`)
+}).setName('theme').setAliases(['settheme']).setTabCompletions(['DEFAULT', 'SNOW', 'MESA', 'ENCHANTED_FOREST', 'DESERT', 'LOLLIPOP', 'NETHER', 'END', 'SCI_FI', 'JUNGLE', 'MUSHROOMS', 'FLOWERS', 'FRUIT_SALAD', 'SMILEYS', 'WARLORDS_BLUE', 'WARLORDS_RED', 'BLOCKING_DEAD', 'PAINTER_STUDIO', 'FJORD', 'JARDIN', 'GOLDMINE', 'CRYSTALS', 'TOWN_SQUARE', 'TENSHU', 'FUTURE_TECH', 'SPACE_DOCK', 'BASIC', 'AIR', 'VANILLA', 'HAUNTED_MANSION', 'GIFTS', 'FIREPLACE', 'NORTH_POLE', 'SANTAS_WORKSHOP', 'POOL_PARTY_BBQ', 'DAY_AT_THE_BEACH', 'STATION', 'NORTHERN_LIGHTS', 'LUNAR_NEW_YEAR_2020', 'EASTER_EGG_VILLAGE', 'GRAND_PLAINS', 'EGG_WORKSHOP', 'SPRING_VILLAGE', 'CATHEDRAL', 'LONELY_LIGHTHOUSE', 'SNOW_GLOBE', 'FARMLAND', 'VINEYARD', 'VENICE', 'OPERA', 'NEIGHBORHOOD', 'COURTYARD', 'CURSED_COVE', 'AQUATIC', 'PILLARS', 'SKYBLOCK_VILLAGE', 'BAYOU', 'FORTRESS', 'HAVEN', 'MODERN_SUBURB', 'PARTHENON', 'AMIRI_TEMPLE', 'GOTHIC_FACADE', 'PALACE', 'PARIS', 'TROPICAL_PARADISE', 'BURNWOOD', 'GLADIATOR_ARENA', 'THE_DOCKS', 'SUNNY_SHORE', 'DISCO', 'POOL_PARTY', 'AUDITORIUM', 'PREBUILT_DEFAULT_ISLAND', 'PREBUILT_FAR_EAST'])
 
 /*
 register('command', () => {

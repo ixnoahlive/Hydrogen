@@ -20,6 +20,8 @@ import './src/features/housing/menuWheel';
 import './src/features/housing/fixSkulls'
 import './src/features/housing/bookmark';
 import './src/features/housing/statTools';
+import './src/features/housing/autofilter';
+import './src/features/housing/mutejukebox';
 // import './src/features/housing/itemMenu';
 // import './src/features/housing/datapicker'
 
