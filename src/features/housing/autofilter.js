@@ -81,8 +81,7 @@ register('chat', (x, y, rank, name, message, event) => {
         message.split(' ').forEach(word => {
             config.featuresAuto_Filter_List.split(';;').forEach(filtered => {
                 let sussyness = similarity(filtered, word.replace(/[\?\.\,]/g, ''))
-                console.log(sussyness, word, filtered)
-
+                
                 if (sussyness>=config.featuresAuto_FilterSensitivity) {
                     ChatLib.command(`housing mute ${name}`)
                     ChatLib.chat('&c[&fAutofilter&c] Muted player & logged punishment details')
